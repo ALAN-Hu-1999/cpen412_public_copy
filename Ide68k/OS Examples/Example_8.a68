@@ -1,0 +1,18 @@
+; This is the interrupt service routine for the program in Example_8.c and must be written
+; in assembly because the MOVEM instruction to save all registers cannot be expressed in C.
+;
+; Do NOT call this program Example_8.asm because this is the output from the compiler
+; and will be overwritten by the next compilation!
+;
+
+        section   code
+
+        xdef      _Int4ISR
+_Int4ISR:
+        or.w      #$0700,SR                     ; Disable ALL interrupts
+        addq.b    #1,_OSIntNesting              ; OSIntNesting++;
+        movem.l   A0-A6/D0-D7,-(A7)             ; Save the registers of the current task
+        move.l    #4,-(A7)
+        jsr       _OSTaskResume                 ; Resume Int4Task: OSTaskResume(4);
+        addq      #4,A7
+        jmp       OSIntExit68K                  ; Exit ISR

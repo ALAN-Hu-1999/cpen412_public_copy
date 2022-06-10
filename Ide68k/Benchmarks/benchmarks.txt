@@ -1,0 +1,45 @@
+Why benchmarks?
+==============
+Benchmark programs are relatively small programs that have no other purpose than to measure the execution
+time of the compiler/CPU combination. They do not compute something usefull. Benchmarks date from the 1970's
+and 1980's when computer and compiler development were at its highdays. Since then, computer design has matured
+and compiler principles are well understood. Benchmarks are interesting in the context of IDE68K because
+it has a simulated CPU as central processor, an ordinary C-language program in fact. Two benchmarks are provided,
+the Whetstone benchmark with floating point operations and the Dhrystone benchmark with exclusively integer
+operations. For comparision, the same benchmarks are also compiled to run directly on the PC (.EXE files).
+
+Whetstone Benchmark
+===================
+The Whetstone benchmark was written by Harold Curnow of CCTA, the British government computer
+procurement agency, based on work by Brian Wichmann of the National Physical Laboratory.
+An Algol version of the benchmark was released in November 1972 and Fortran single and double
+precision varieties in April 1973. The Fortran codes became the first general purpose benchmarks
+that set industry standards of performance.
+
+The benchmark produced speed ratings in terms of Thousands of Whetstone Instructions Per Second (KWIPS).
+In 1978, self timing versions (by Roy Longbottom also of CCTA) produced speed ratings in MOPS
+(Millions of Operations Per Second) and MFLOPS (Floating Point) and overall rating in MWIPS
+
+Whetstone benchmark source code can also be downloaded in programming languages like Fortran, C, Basic, Java,
+Visual Basic, Excel Spreadsheet Visual Basic and others. These are all of the same sort of format with self
+timing for PC's. Please excuse all code is looking like Fortran.
+
+Whetstone Reference:
+Harold J. Curnow and Brian A. Wichmann, "A Synthetic Benchmark", Computer Journal Vol 19, No 1 1976
+
+Dhrystone Benchmark
+===================
+The Dhrystone "C" benchmark, a sort of Whetstone without floating point, became the key standard benchmark,
+from 1984, with the growth of Unix systems. The first version was produced by Reinhold P. Weicker in ADA and
+translated to "C" by Rick Richardson.
+
+Two versions are available, Dhrystone versions 1.1 and 2.1. The second version was produced to avoid
+over-optimization problems encountered with version 1. Although it is recommended that advanced optimization
+levels should be avoided with the latter, it is clear from published results that the recommendation is
+usually ignored.
+
+Original versions of the benchmark gave performance ratings in terms of Dhrystones per second. This was
+later changed to VAX MIPS by dividing Dhrystones per second by 1600, the average DEC VAX 11/780 result.
+
+Dhrystone Reference:
+Reinhold P. Weicker, CACM Vol 27, No 10, 10/84,pg.1013
